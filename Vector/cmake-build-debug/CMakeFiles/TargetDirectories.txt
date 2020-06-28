@@ -1,3 +1,0 @@
-D:/Github/Data-Structures-Implementation/Vector/cmake-build-debug/CMakeFiles/Vector.dir
-D:/Github/Data-Structures-Implementation/Vector/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Github/Data-Structures-Implementation/Vector/cmake-build-debug/CMakeFiles/rebuild_cache.dir
