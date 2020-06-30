@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Deque.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Deque.dir/objects.a @CMakeFiles\Deque.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Deque.dir/objects.a -Wl,--no-whole-archive  -o Deque.exe -Wl,--out-implib,libDeque.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Deque.dir\linklibs.rsp
