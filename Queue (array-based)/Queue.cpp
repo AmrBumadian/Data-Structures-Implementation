@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <iostream>
 #include "Queue.h"
+
 using namespace std;
 
 template<class T>
@@ -31,6 +32,7 @@ Queue<T>::Queue(const Queue<T> &other) {
 
 template<class T>
 Queue<T> &Queue<T>::operator=(const Queue<T> &other) {
+    delete[] array;
     if (this != &other) {
         copy(other);
     }
@@ -45,7 +47,7 @@ Queue<T>::~Queue() {
 template<class T>
 void Queue<T>::push(T value) {
     if (length != capacity) {
-        b = (b + 1) % capacity;
+        b = (b + 1) % capacity; // if b + 1 = capacity, go to the empty space in the front b = 0
         array[b] = value;
     } else {
         cerr << "\nQueue is full" << endl;
@@ -60,7 +62,8 @@ T Queue<T>::pop() {
         cerr << "\nCannot remove from empty Queue" << endl;
     } else {
         T value = array[f];
-        f = (f + 1) % capacity;
+        f = (f + 1) %
+            capacity; //  discard this element and point to the next, if the next index == capacity point to the front of the array
         --length;
         return value;
     }
@@ -95,3 +98,28 @@ void Queue<T>::clear() {
     length = 0;
     array = new T[capacity];
 }
+
+template<class T>
+bool Queue<T>::resize(int size) { // resize to bigger size only so elements won't be lost
+    if (size < capacity) {
+        cerr << "\ncannot make the Queue smaller\n";
+        return false; // cannot resize
+    }
+    T *temp = new T[size]; // allocate new capacity
+    int i = 0, j = f; // pointers to copy the elements i for the new and j for the old
+    while (j != b) {
+        temp[i] = array[j];
+        ++i;
+        j = (j + 1) % capacity; // make the pointer cycle through the array till it reach b
+    }
+    temp[i] = array[b]; // copy the element at b
+    delete[] array; // delete the old array
+    array = temp; // point the array pointer to the new array
+    capacity = size;
+    f = 0; // front is now the first index
+    b = length - 1; // back is the last occupied index
+    return true; // successfully resized;
+}
+
+
+

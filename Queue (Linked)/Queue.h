@@ -1,19 +1,31 @@
-#ifndef QUEUE__ARRAY_BASED__QUEUE_H
-#define QUEUE__ARRAY_BASED__QUEUE_H
+#ifndef QUEUE__LINKED__QUEUE_H
+#define QUEUE__LINKED__QUEUE_H
+
+template<class T>
+class Node {
+public:
+    T value;
+    Node<T> *next;
+
+    Node() {
+        next = nullptr;
+    }
+
+    Node(T value) : value(value) {
+        next = nullptr;
+    }
+};
 
 template<class T>
 class Queue {
 private:
-    T *array;
-    int capacity;
+    Node<T> *head, *tail;
     int length;
-    int f;
-    int b;
 
     void copy(const Queue<T> &other);
 
 public:
-    Queue(int size);
+    Queue();
 
     Queue(const Queue<T> &other);
 
@@ -34,9 +46,7 @@ public:
     bool empty();
 
     void clear();
-
-    bool resize(int size);
 };
 
 
-#endif //QUEUE__ARRAY_BASED__QUEUE_H
+#endif //QUEUE__LINKED__QUEUE_H
