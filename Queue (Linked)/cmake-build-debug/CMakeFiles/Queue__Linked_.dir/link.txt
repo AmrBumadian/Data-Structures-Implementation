@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Queue__Linked_.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Queue__Linked_.dir/objects.a @CMakeFiles\Queue__Linked_.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Queue__Linked_.dir/objects.a -Wl,--no-whole-archive  -o Queue__Linked_.exe -Wl,--out-implib,libQueue__Linked_.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Queue__Linked_.dir\linklibs.rsp
