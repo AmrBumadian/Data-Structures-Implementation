@@ -38,6 +38,7 @@ template<class T>
 const AList<T>& AList<T>::operator=(const AList<T> &other) {
 
     if (this != &other) { // avoid self assignment
+		delete [] list;
         size = other.size;
         length = other.length;
         list = new T[size];

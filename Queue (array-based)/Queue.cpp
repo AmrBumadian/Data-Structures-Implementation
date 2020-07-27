@@ -32,8 +32,9 @@ Queue<T>::Queue(const Queue<T> &other) {
 
 template<class T>
 Queue<T> &Queue<T>::operator=(const Queue<T> &other) {
-    delete[] array;
+    
     if (this != &other) {
+		delete[] array;
         copy(other);
     }
     return *this;

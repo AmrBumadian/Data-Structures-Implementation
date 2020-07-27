@@ -65,6 +65,7 @@ OrderedList<T>::~OrderedList() {
 template<class T>
 OrderedList<T> &OrderedList<T>::operator=(const OrderedList<T> &other) {
     if (this != &other) { // avoid self-assignment
+		clear();
         copyList(other);
     }
     return *this;

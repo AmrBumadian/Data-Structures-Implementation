@@ -33,8 +33,9 @@ Queue<T>::Queue(const Queue<T> &other) {
 
 template<class T>
 Queue<T> &Queue<T>::operator=(const Queue<T> &other) {
-    clear(); // de-allocate
+    
     if (this != &other && other.head != nullptr) { // avoid self-assignemnt and method call for empty Queue
+		clear(); // de-allocate
         copy(other);
     }
     return *this; // return this object by reference

@@ -34,8 +34,9 @@ Stack<T>::Stack(const Stack<T> &other) {
 
 template<class T>
 Stack<T> &Stack<T>::operator=(const Stack<T> &other) {
-    clear();
+
     if (this != &other && other.head != nullptr) {
+		clear();
         copy(other);
     }
     return *this;

@@ -26,8 +26,8 @@ Stack<T>::Stack(const Stack<T> &other) {
 
 template<class T>
 Stack<T> &Stack<T>::operator=(const Stack<T> &other) {
-    delete [] array;
     if (this != &other) {
+		delete [] array;
         copyStack(other);
     }
     return *this;
