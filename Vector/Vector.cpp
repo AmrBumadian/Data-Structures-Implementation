@@ -75,7 +75,7 @@ void Vector<T>::pushBack(T value) {
 
 template<class T>
 void Vector<T>::popBack() {
-    if (size - 1 <= (capacity / 2)) { // check if reallocation is needed
+    if (size - 1 <= (capacity / 4)) { // check if reallocation is needed
         capacity = ((capacity / 2) > 0) ? (capacity / 2) : 1; // insure that capacity is at least 1
         T *temp = array; // pointer to the old array
         array = new T[capacity]; // reallocate new memory capacity
@@ -152,7 +152,7 @@ void Vector<T>::erase(int index) {
         throw new out_of_range("index out of bounds");
     }
 
-    if (size - 1 <= (capacity / 2)) {
+    if (size - 1 <= (capacity / 4)) {
         capacity = ((capacity / 2) > 0) ? (capacity / 2) : 1;
         T *temp = array;
         array = new T[capacity];
